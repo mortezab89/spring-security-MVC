@@ -1,6 +1,7 @@
 package com.mkyong.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -24,13 +25,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		return new BCryptPasswordEncoder();
 	}
 
+//	@Autowired
+//	private UserDetailsService userDetailsService;
 
 	//encrypt password using BCrypt
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+//		auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
+
 		auth.inMemoryAuthentication().withUser("mkyong").password(BCrypt.hashpw("123456", BCrypt.gensalt())).roles("USER");
 		auth.inMemoryAuthentication().withUser("admin").password(BCrypt.hashpw("123456", BCrypt.gensalt())).roles("ADMIN");
 		auth.inMemoryAuthentication().withUser("dba").password(BCrypt.hashpw("123456", BCrypt.gensalt())).roles("DBA");
+
 	}
 
 
