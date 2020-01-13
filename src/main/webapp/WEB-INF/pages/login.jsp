@@ -20,6 +20,10 @@
         <label for="password">Password</label>
         <input type="password" id="password" name="password"/>
     </p>
+    <p>
+        <label for="remember"> Remember me</label>
+        <input type="checkbox" name="rem-me-key" id="remember"/>
+    </p>
     <input type="hidden"
            name="${_csrf.parameterName}"
            value="${_csrf.token}"/>

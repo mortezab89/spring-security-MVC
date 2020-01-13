@@ -15,15 +15,14 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-aop:5.1.7.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-context:5.1.7.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.1.7.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-core:3.2.3.RELEASE" />
-          <element id="library" level="project" name="Maven: aopalliance:aopalliance:1.0" />
-          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-web:3.2.3.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-config:3.2.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-core:5.1.7.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-web:5.1.7.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-config:5.1.7.RELEASE" />
           <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
-          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-taglibs:3.2.3.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-acl:3.2.3.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:3.2.8.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-tx:3.2.8.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-taglibs:5.1.7.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-acl:5.1.7.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:5.1.11.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-tx:5.1.11.RELEASE" />
         </element>
       </element>
       <element id="directory" name="META-INF">
