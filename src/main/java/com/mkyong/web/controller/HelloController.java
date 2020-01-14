@@ -2,6 +2,7 @@ package com.mkyong.web.controller;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,6 +23,7 @@ public class HelloController {
 		model.addObject("title", "Spring Security Hello World");
 		model.addObject("message", "This is welcome page!");
 		model.setViewName("hello");
+
 		return model;
 
 	}

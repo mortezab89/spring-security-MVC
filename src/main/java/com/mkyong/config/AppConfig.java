@@ -10,7 +10,7 @@ import org.springframework.web.servlet.view.JstlView;
 
 @EnableWebMvc
 @Configuration
-@ComponentScan({ "com.mkyong.web.*" })
+@ComponentScan({ "com.mkyong.*" })
 @Import({ SecurityConfig.class })
 public class AppConfig {
 

@@ -1,41 +1,38 @@
 package com.mkyong.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
-import org.springframework.security.web.authentication.NullRememberMeServices;
-import org.springframework.security.web.authentication.RememberMeServices;
 
-@Configuration //can be removed
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+//    @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
+    @Autowired
+    private UserDetailsService userDetailsService;
+
+    //to remove autowire error in userDetailsService
 
 	@Bean
 	public BCryptPasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
 	}
 
-//	@Autowired
-//	private UserDetailsService userDetailsService;
-
 	//encrypt password using BCrypt
-	@Autowired
-	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+	@Override
+	public void configure(AuthenticationManagerBuilder auth) throws Exception {
 //		auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
 
-		auth.inMemoryAuthentication().withUser("mkyong").password(BCrypt.hashpw("123456", BCrypt.gensalt())).roles("USER");
-		auth.inMemoryAuthentication().withUser("admin").password(BCrypt.hashpw("123456", BCrypt.gensalt())).roles("ADMIN");
-		auth.inMemoryAuthentication().withUser("dba").password(BCrypt.hashpw("123456", BCrypt.gensalt())).roles("DBA");
+//		auth.inMemoryAuthentication().withUser("mkyong").password(BCrypt.hashpw("123456", BCrypt.gensalt())).roles("USER");
+//		auth.inMemoryAuthentication().withUser("admin").password(BCrypt.hashpw("123456", BCrypt.gensalt())).roles("ADMIN");
+//		auth.inMemoryAuthentication().withUser("dba").password(BCrypt.hashpw("123456", BCrypt.gensalt())).roles("DBA");
+
+		auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
 
 	}
 
