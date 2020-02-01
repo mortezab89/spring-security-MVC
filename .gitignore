@@ -1,0 +1,7 @@
+*.iml
+*.impl
+*.versionsBackup
+*.gz
+*.jar
+*.log
+.idea/

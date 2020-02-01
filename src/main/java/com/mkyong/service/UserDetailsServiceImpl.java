@@ -12,7 +12,7 @@ import org.springframework.security.core.userdetails.User.UserBuilder;
 
 import javax.transaction.Transactional;
 
-@Service("userDetailsService")
+@Service()
 public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Autowired
